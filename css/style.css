@@ -1,44 +1,60 @@
 :root {
     --primary: #00f2ff;
-    --bg: #08080a;
+    --bg: #050505;
     --font-main: 'Orbitron', sans-serif;
 }
 
+* { transition: font-family 0.2s ease; }
+
 body {
     margin: 0; background: var(--bg); color: white;
-    font-family: var(--font-main);
+    font-family: var(--font-main) !important;
     display: flex; flex-direction: column; align-items: center;
-    min-height: 100vh; padding: 20px; box-sizing: border-box;
+    min-height: 100vh; padding: 20px; overflow-x: hidden;
 }
 
-/* Controller UI Styling */
 #synth-ui-container {
-    width: 100%; max-width: 1100px;
-    background: rgba(0,0,0,0.8);
-    border: 1px solid #333; border-radius: 12px;
-    margin-bottom: 20px; overflow-x: auto;
-    display: none; /* Toggle with 'S' */
+    width: 100%; max-width: 1200px; background: #000;
+    border: 1px solid #333; border-radius: 8px;
+    margin-bottom: 20px; display: none; z-index: 10;
+}
+
+#canvas-container {
+    width: 100%; height: 300px; background: #000;
+    margin-bottom: 20px; border-radius: 8px; border: 1px solid #222;
 }
 
 .glass-panel {
     background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px; padding: 30px; width: 450px;
     text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-    transition: transform 0.05s ease-out;
+    will-change: transform;
 }
 
-.control-row { display: flex; gap: 10px; margin-bottom: 15px; }
+/* The Shake Animation */
+.shake {
+    animation: shake-anim 0.1s ease-in-out;
+}
+
+@keyframes shake-anim {
+    0% { transform: translate(0,0); }
+    25% { transform: translate(4px, -4px); }
+    50% { transform: translate(-4px, 4px); }
+    100% { transform: translate(0,0); }
+}
+
+.control-row { display: flex; gap: 15px; margin-bottom: 15px; }
 .control-group { flex: 1; text-align: left; }
-label { font-size: 10px; opacity: 0.5; text-transform: uppercase; }
+label { font-size: 11px; opacity: 0.6; text-transform: uppercase; display: block; margin-bottom: 5px;}
 
 select, input, button {
     width: 100%; background: #111; border: 1px solid #333;
-    color: white; padding: 10px; border-radius: 8px; font-family: inherit;
+    color: white; padding: 10px; border-radius: 8px; font-family: inherit !important;
 }
 
-button { background: var(--primary); color: #000; font-weight: bold; border: none; cursor: pointer; }
+button { background: var(--primary); color: #000; font-weight: bold; cursor: pointer; border: none; }
 button:disabled { background: #222; color: #555; }
 
-#visualizer { width: 100%; height: 60px; margin: 15px 0; background: #000; border-radius: 5px; }
+.status-bar { margin-top: 15px; color: var(--primary); font-family: monospace; font-size: 12px; }
