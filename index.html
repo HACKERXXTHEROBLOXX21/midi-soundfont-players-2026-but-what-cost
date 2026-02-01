@@ -3,44 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYNTH_OS | SpessaSynth 2026</title>
+    <title>SYNTH!'s Midi Soundfont Players!</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Fredoka+One&family=Permanent+Marker&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Fredoka+One&family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<div id="synth-ui-container"></div>
 
 <div class="glass-panel" id="main-panel">
     <h1>SYNTH_OS</h1>
     
-    <div class="control-group">
-        <label>UI Appearance</label>
-        <select id="font-changer">
-            <option value="'Orbitron', sans-serif">Orbitron (Sci-Fi)</option>
-            <option value="'Fredoka One', cursive">Fredoka One (Round)</option>
-            <option value="'Permanent Marker', cursive">Permanent Marker (Urban)</option>
-            <option value="'Roboto Mono', monospace">Roboto Mono (Tech)</option>
-            <option value="custom">-- Upload Your Own Font --</option>
-        </select>
-        <input type="file" id="font-upload" accept=".ttf,.otf,.woff" style="display:none;">
+    <div class="control-row">
+        <div class="control-group">
+            <label>Font Style</label>
+            <select id="font-changer">
+                <option value="'Orbitron', sans-serif">Orbitron</option>
+                <option value="'Fredoka One', cursive">Fredoka One</option>
+                <option value="'Permanent Marker', cursive">Permanent Marker</option>
+                <option value="custom">-- Upload Custom --</option>
+            </select>
+            <input type="file" id="font-upload" accept=".ttf,.otf" style="display:none;">
+        </div>
     </div>
 
-    <div class="control-group">
-        <label>1. SoundFont (.sf2)</label>
-        <input type="file" id="sf2-upload" accept=".sf2,.sf3">
-    </div>
-
-    <div class="control-group">
-        <label>2. MIDI File (.mid)</label>
-        <input type="file" id="midi-upload" accept=".mid,.midi">
+    <div class="control-row">
+        <div class="control-group">
+            <label>1. SoundFont</label>
+            <input type="file" id="sf2-upload" accept=".sf2,.sf3">
+        </div>
+        <div class="control-group">
+            <label>2. MIDI File</label>
+            <input type="file" id="midi-upload" accept=".mid">
+        </div>
     </div>
 
     <canvas id="visualizer"></canvas>
     
-    <div class="playback-controls">
-        <button id="play-pause" disabled>INITIALIZE ENGINE</button>
+    <div class="main-actions">
+        <button id="play-pause" disabled>START SYSTEM</button>
+        <button id="toggle-ui">CONTROLLER (S)</button>
     </div>
 
-    <div class="status-bar" id="status">Waiting for system input...</div>
+    <div class="status-bar" id="status">Ready...</div>
 </div>
 
 <script type="module" src="js/main.js"></script>
