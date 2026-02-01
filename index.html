@@ -3,16 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYNTH_OS | Pro Edition 2026</title>
+    <title>SYNTH_OS Pro</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Fredoka+One&family=Permanent+Marker&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Fredoka+One&family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div id="synth-ui-container"></div>
+<div id="canvas-container"><canvas id="piano-roll"></canvas></div>
 
-<div id="canvas-container">
-    <canvas id="piano-roll"></canvas>
+<div class="playback-bar">
+    <div class="volume-container">
+        <input type="range" id="volume-slider" min="0" max="100" value="100">
+        <span id="volume-label">100%</span>
+    </div>
+    <div class="transport-controls">
+        <button class="icon-btn">⏮</button>
+        <button class="icon-btn">🔄</button>
+        <button class="icon-btn">🔀</button>
+        <button id="mini-play" class="icon-btn">⏸</button>
+        <button class="icon-btn">☰</button>
+        <button class="icon-btn">⏲</button>
+        <button class="icon-btn">⏭</button>
+    </div>
 </div>
 
 <div class="glass-panel" id="main-panel">
@@ -55,7 +68,7 @@
 
     <div class="main-actions">
         <button id="play-pause" disabled data-i18n="btn_start">START SYSTEM</button>
-        <button id="toggle-ui" data-i18n="btn_ctrl">CONTROLLER (S)</button>
+        <button id="toggle-ui" data-i18n="btn_ctrl">Synthesizer controller (S)</button>
     </div>
 
     <div class="status-bar" id="status" data-i18n="status_wait">Awaiting Input...</div>
