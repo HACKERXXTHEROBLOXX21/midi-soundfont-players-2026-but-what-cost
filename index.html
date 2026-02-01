@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYNTH_OS | SpessaSynth Player</title>
+    <title>SYNTH_OS | SpessaSynth 2026</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Fredoka+One&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Fredoka+One&family=Permanent+Marker&family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -18,28 +18,29 @@
             <option value="'Orbitron', sans-serif">Orbitron (Sci-Fi)</option>
             <option value="'Fredoka One', cursive">Fredoka One (Round)</option>
             <option value="'Permanent Marker', cursive">Permanent Marker (Urban)</option>
-            <option value="custom">-- Upload Custom Font --</option>
+            <option value="'Roboto Mono', monospace">Roboto Mono (Tech)</option>
+            <option value="custom">-- Upload Your Own Font --</option>
         </select>
         <input type="file" id="font-upload" accept=".ttf,.otf,.woff" style="display:none;">
     </div>
 
     <div class="control-group">
-        <label>1. Load SoundFont (.sf2)</label>
+        <label>1. SoundFont (.sf2)</label>
         <input type="file" id="sf2-upload" accept=".sf2,.sf3">
     </div>
 
     <div class="control-group">
-        <label>2. Load MIDI (.mid)</label>
-        <input type="file" id="midi-upload" accept=".mid">
+        <label>2. MIDI File (.mid)</label>
+        <input type="file" id="midi-upload" accept=".mid,.midi">
     </div>
 
     <canvas id="visualizer"></canvas>
     
     <div class="playback-controls">
-        <button id="play-pause" disabled>START ENGINE</button>
+        <button id="play-pause" disabled>INITIALIZE ENGINE</button>
     </div>
 
-    <div class="status-bar" id="status">Awaiting Input...</div>
+    <div class="status-bar" id="status">Waiting for system input...</div>
 </div>
 
 <script type="module" src="js/main.js"></script>
