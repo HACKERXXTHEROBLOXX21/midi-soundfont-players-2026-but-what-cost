@@ -10,22 +10,30 @@
 <body>
 
 <div id="synth-ui-container"></div>
-
-<div id="canvas-container">
-    <canvas id="piano-roll"></canvas>
-</div>
+<div id="canvas-container"><canvas id="piano-roll"></canvas></div>
 
 <div class="glass-panel" id="main-panel">
     <h1>SYNTH_OS</h1>
     
     <div class="control-row">
         <div class="control-group">
-            <label>Font Style</label>
+            <label data-i18n="lang_label">Language</label>
+            <select id="lang-selector">
+                <option value="en">English</option>
+                <option value="pt">Português</option>
+                <option value="vi">Tiếng Việt</option>
+                <option value="custom">-- Custom --</option>
+            </select>
+            <input type="file" id="lang-upload" accept=".json" style="display:none;">
+        </div>
+
+        <div class="control-group">
+            <label data-i18n="font_label">Font Style</label>
             <select id="font-changer">
                 <option value="'Orbitron', sans-serif">Orbitron</option>
                 <option value="'Fredoka One', cursive">Fredoka One</option>
                 <option value="'Permanent Marker', cursive">Permanent Marker</option>
-                <option value="custom">-- Upload Custom --</option>
+                <option value="custom">-- Custom Font --</option>
             </select>
             <input type="file" id="font-upload" accept=".ttf,.otf,.woff" style="display:none;">
         </div>
@@ -33,21 +41,21 @@
 
     <div class="control-row">
         <div class="control-group">
-            <label>SoundFont</label>
+            <label data-i18n="sf2_label">SoundFont</label>
             <input type="file" id="sf2-upload" accept=".sf2,.sf3">
         </div>
         <div class="control-group">
-            <label>MIDI File</label>
+            <label data-i18n="midi_label">MIDI File</label>
             <input type="file" id="midi-upload" accept=".mid">
         </div>
     </div>
 
     <div class="main-actions">
-        <button id="play-pause" disabled>START SYSTEM</button>
-        <button id="toggle-ui">CONTROLLER (S)</button>
+        <button id="play-pause" disabled data-i18n="btn_start">START SYSTEM</button>
+        <button id="toggle-ui" data-i18n="btn_ctrl">CONTROLLER (S)</button>
     </div>
 
-    <div class="status-bar" id="status">Awaiting Input...</div>
+    <div class="status-bar" id="status" data-i18n="status_wait">Awaiting Input...</div>
 </div>
 
 <script type="module" src="js/main.js"></script>
