@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Synth_OS | Web MIDI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-panel">
+        <h1 id="main-title">SYNTH_OS</h1>
+        
+        <div class="control-group">
+            <label>UI Appearance</label>
+            <select id="font-changer">
+                <option value="'Orbitron', sans-serif">Orbitron</option>
+                <option value="'Fredoka One', cursive">Fredoka One</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>SoundFont</label>
+            <input type="file" id="sf2-upload" accept=".sf2,.sf3">
+        </div>
+
+        <div class="control-group">
+            <label>MIDI File</label>
+            <input type="file" id="midi-upload" accept=".mid,.midi">
+        </div>
+
+        <div class="status-bar" id="status">Awaiting Input...</div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
