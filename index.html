@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYNTH_OS | Pro Edition</title>
+    <title>SYNTH_OS | Pro Edition 2026</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Fredoka+One&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Fredoka+One&family=Permanent+Marker&family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div id="synth-ui-container"></div>
-<div id="canvas-container"><canvas id="piano-roll"></canvas></div>
+
+<div id="canvas-container">
+    <canvas id="piano-roll"></canvas>
+</div>
 
 <div class="glass-panel" id="main-panel">
-    <h1>SYNTH_OS</h1>
+    <h1 id="main-title">SYNTH_OS</h1>
     
     <div class="control-row">
         <div class="control-group">
@@ -22,18 +25,18 @@
                 <option value="en">English</option>
                 <option value="pt">Português</option>
                 <option value="vi">Tiếng Việt</option>
-                <option value="custom">-- Custom --</option>
+                <option value="custom">-- Custom Language --</option>
             </select>
             <input type="file" id="lang-upload" accept=".json" style="display:none;">
         </div>
 
         <div class="control-group">
-            <label data-i18n="font_label">Font Style</label>
+            <label data-i18n="font_label">UI Font</label>
             <select id="font-changer">
                 <option value="'Orbitron', sans-serif">Orbitron</option>
                 <option value="'Fredoka One', cursive">Fredoka One</option>
                 <option value="'Permanent Marker', cursive">Permanent Marker</option>
-                <option value="custom">-- Custom Font --</option>
+                <option value="custom">-- Upload Custom --</option>
             </select>
             <input type="file" id="font-upload" accept=".ttf,.otf,.woff" style="display:none;">
         </div>
